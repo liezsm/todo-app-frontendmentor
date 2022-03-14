@@ -1,0 +1,22 @@
+@mixin desktop() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin light-theme($theme: true) {
+  .App {
+    background-color: #fff;
+  }
+  header {
+    background: url("../images/bg-mobile-light.jpg") center/cover no-repeat;
+  }
+}
+@mixin dark-theme($theme: true) {
+  .App {
+    background-color: #000;
+  }
+  header {
+    background: url("../images/bg-mobile-dark.jpg") center/cover no-repeat;
+  }
+}
