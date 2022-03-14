@@ -6,6 +6,14 @@ import Main from "./components/Main";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
+  const [todos, setTodos] = useState([
+    { id: 1, text: "Complete Javascript course", isCompleted: true },
+    { id: 2, text: "Jog around the park 3x", isCompleted: false },
+    { id: 3, text: "10 minutes meditation", isCompleted: true },
+    { id: 4, text: "Read for one hour", isCompleted: false },
+    { id: 5, text: "Pick up groceries", isCompleted: false },
+    { id: 6, text: "Complete Todo App on Frontend Mentor", isCompleted: true },
+  ]);
   const handleTheme = () => {
     setIsDark(!isDark);
   };

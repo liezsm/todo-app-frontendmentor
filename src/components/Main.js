@@ -7,8 +7,7 @@ const Main = () => {
     <main>
       <div className='todo-card'>
         <Task />
-        <Task />
-        <Task />
+
         <TaskCounter />
       </div>
 
