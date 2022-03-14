@@ -4,22 +4,22 @@ $brightBlue: hsl(220, 98%, 61%);
 // $checkBg: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
 $checked: linear-gradient(rgb(87, 221, 255), rgb(192, 88, 243));
 
-// light theme
+// -light theme
 
 $veryLightGray: hsl(0, 0%, 98%);
 $veryLightGrayishBlue: hsl(236, 33%, 92%);
 $lightGrayishBlue: hsl(233, 11%, 84%);
-$darkGrayishBlue: hsl(236, 9%, 61%);
-$veryDarkGrayishBlue: hsl(235, 19%, 35%);
+$darkGrayishBlue1: hsl(236, 9%, 61%);
+$veryDarkGrayishBlue1: hsl(235, 19%, 35%);
 
-// dark Theme
+//- dark Theme
 
 $veryDarkBlue: hsl(235, 21%, 11%);
 $veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
 $lightGrayishBlue: hsl(234, 39%, 85%);
 $lightGrayishBlueHover: hsl(236, 33%, 92%);
-$darkGrayishBlue: hsl(234, 11%, 52%);
-$veryDarkGrayishBlue1: hsl(233, 14%, 35%);
+$darkGrayishBlue2: hsl(234, 11%, 52%);
+$veryDarkGrayishBlue2: hsl(233, 14%, 35%);
 $veryDarkGrayishBlue: hsl(237, 14%, 26%);
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");

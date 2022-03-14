@@ -1,6 +1,8 @@
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 import { useState } from "react";
+import Main from "./components/Main";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -11,8 +13,10 @@ function App() {
   return (
     <div className={themeSwitch}>
       <Header onTheme={handleTheme} isDark={isDark} />
-      <main></main>
-      <footer></footer>
+      <div className='wrapper'>
+        <Main />
+        <Footer />
+      </div>
     </div>
   );
 }

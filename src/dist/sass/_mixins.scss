@@ -1,22 +1,91 @@
+@use "./globals" as g;
+// -for desktop sizes
 @mixin desktop() {
   @media (min-width: 768px) {
     @content;
   }
 }
 
+// -for display flex
+@mixin d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin d-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+// - for light theme
 @mixin light-theme($theme: true) {
-  .App {
-    background-color: #fff;
-  }
+  background-color: g.$veryLightGrayishBlue;
+
   header {
     background: url("../images/bg-mobile-light.jpg") center/cover no-repeat;
+    @include desktop() {
+      background: url("../images/bg-desktop-light.jpg") center/cover no-repeat;
+    }
+  }
+
+  .checkbox {
+    border: 2px solid g.$veryLightGrayishBlue;
+  }
+  main {
+    .todo-card {
+      background-color: g.$veryLightGray;
+      color: g.$veryDarkGrayishBlue;
+    }
+    .filter-card {
+      background-color: g.$veryLightGray;
+    }
   }
 }
+
+// -for dark theme
 @mixin dark-theme($theme: true) {
-  .App {
-    background-color: #000;
-  }
+  background-color: black;
+
   header {
     background: url("../images/bg-mobile-dark.jpg") center/cover no-repeat;
+    @include desktop() {
+      background: url("../images/bg-desktop-dark.jpg") center/cover no-repeat;
+    }
+  }
+
+  .checkbox {
+    border: 2px solid g.$veryDarkGrayishBlue1;
+  }
+  main {
+    .todo-card {
+      background-color: g.$veryDarkBlue;
+      color: g.$lightGrayishBlue;
+    }
+
+    .filter-card {
+      background-color: g.$veryDarkBlue;
+      color: g.$veryDarkGrayishBlue;
+    }
+  }
+}
+// -padding
+
+@mixin add-padding($pos, $size) {
+  @if ($pos == "all") {
+    padding: $size;
+  } @else if ($pos == "x") {
+    padding: 0 $size;
+  } @else if ($pos == "y") {
+    padding: $size 0;
+  } @else if ($pos == "top") {
+    padding-top: $size;
+  } @else if ($pos == "bottom") {
+    padding-bottom: $size;
+  } @else if ($pos == "left") {
+    padding-left: $size;
+  } @else if ($pos == "right") {
+    padding-right: $size;
   }
 }

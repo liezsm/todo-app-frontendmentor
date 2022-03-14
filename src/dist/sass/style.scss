@@ -1,9 +1,22 @@
 @use "globals" as g;
 @use "mixins" as m;
 
+body {
+  font-size: g.$font-size;
+  font-family: g.$font-family;
+}
+
 .App {
   width: 100%;
   height: 100vh;
+}
+
+.wrapper {
+  @include m.desktop() {
+    margin: auto;
+    width: 535px;
+    border: 2px solid green;
+  }
 }
 
 .light-theme {
@@ -16,15 +29,146 @@
 header {
   width: 100%;
   height: 200px;
+  color: g.$veryLightGray;
 
-  .btn {
-    background-color: transparent;
-    border: none;
-    outline: none;
+  font-weight: bold;
+  @include m.add-padding(x, 2rem);
+  @include m.add-padding(top, 2rem);
 
-    :hover {
-      cursor: pointer;
-      transform: scale(1.05);
+  .title {
+    @include m.d-flex;
+
+    .btn {
+      background-color: transparent;
+      border: none;
+      outline: none;
+
+      :hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
     }
   }
+
+  .addTodo-form {
+    margin: auto;
+    background: #fff;
+    width: 100%;
+    height: 50px;
+    padding: 1rem;
+    border-radius: 0.7rem;
+    @include m.d-flex-row;
+
+    .todo-input {
+      width: 90%;
+      padding: 0.5rem;
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+
+  &:checked {
+    background: g.$checked;
+
+    &::before {
+      display: block;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    pointer-events: none;
+    background-image: url("../images/icon-check.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+  }
+}
+
+main {
+  .todo-card {
+    margin: auto;
+    margin-top: -2rem;
+    width: 90vw;
+    // min-height: 370px;
+    height: auto;
+    font-size: 12px;
+
+    @include m.desktop() {
+      width: 100%;
+    }
+  }
+
+  .filter-card {
+    @include m.d-flex;
+    @include m.add-padding(all, 1rem);
+    justify-content: space-around;
+    width: 90vw;
+    margin: auto;
+    margin-top: 2rem;
+    color: g.$veryDarkGrayishBlue1;
+
+    @include m.desktop() {
+      display: none;
+    }
+  }
+}
+
+.task-item {
+  @include m.d-flex;
+  @include m.add-padding(all, 1rem);
+  border-bottom: 1px solid g.$darkGrayishBlue2;
+
+  h3 {
+    margin-left: -6rem;
+    @include m.desktop() {
+      margin-left: -12rem;
+    }
+  }
+  .delete-btn {
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.checked-task {
+  text-decoration: line-through;
+}
+
+.task-counter {
+  color: g.$veryDarkGrayishBlue;
+  @include m.d-flex;
+  @include m.add-padding(all, 1rem);
+
+  .fiter-desktop-only {
+    display: none;
+
+    @include m.desktop() {
+      display: block;
+
+      a {
+        @include m.add-padding(x, 1rem);
+      }
+    }
+  }
+}
+footer {
+  color: g.$darkGrayishBlue2;
+  text-align: center;
 }
