@@ -57,7 +57,7 @@ const Main = ({
         />
       </div>
 
-      <FilterTodos />
+      <FilterTodos buttonColor={buttonColor} handleFilter={handleFilter} />
     </main>
   );
 };

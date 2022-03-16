@@ -46,7 +46,7 @@ function App() {
 
     setTimeout(() => {
       textInput.value = "";
-    }, 3000);
+    }, 2500);
   };
 
   // todo handle Clear completed todos
