@@ -5,10 +5,11 @@ import { useState } from "react";
 
 const Header = ({ onTheme, isDark, handleInput, todos }) => {
   const [addTodo, setAddTodo] = useState({
-    id: todos.length + 1,
     text: "",
     isCompleted: false,
   });
+
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (e) => {
     const { type, name, value } = e.target;
@@ -32,7 +33,18 @@ const Header = ({ onTheme, isDark, handleInput, todos }) => {
             />
           </button>
         </div>
-        <form onSubmit={(e) => handleInput(e, addTodo, textInput)}>
+        <form
+          onSubmit={(e) => {
+            handleInput(e, addTodo);
+            setIsSubmit(true);
+            setTimeout(() => {
+              setAddTodo({
+                text: "",
+                isCompleted: false,
+              });
+            }, 1000);
+          }}
+        >
           <div className='addTodo-form'>
             <input
               type='checkbox'

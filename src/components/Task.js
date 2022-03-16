@@ -8,7 +8,7 @@ const Task = ({ todo: { id, text, isCompleted }, onToggle, delBtn }) => {
         checked={isCompleted}
         onChange={() => onToggle(id)}
       />
-      <h3 className={isCompleted ? "checked-task" : ""}>{text}</h3>
+      <p className={isCompleted ? "checked-task" : ""}>{text}</p>
       <button className='delete-btn' onClick={() => delBtn(id)}>
         <img src={DeleteLogo} alt='delete button' />
       </button>

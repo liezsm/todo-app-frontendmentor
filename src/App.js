@@ -20,6 +20,9 @@ function App() {
 
   // todo to add the class for theme preference
   let themeSwitch = isDark ? "App dark-theme" : "App light-theme";
+  isDark
+    ? (document.body.className = "dark-theme")
+    : (document.body.className = "light-theme");
 
   // todo toggle todo check/uncheck
   const handleChange = (id) => {
@@ -39,14 +42,13 @@ function App() {
 
   // todo input text to add todo
 
-  const handleInput = (e, todoItem, textInput) => {
+  const handleInput = (e, todoItem) => {
     e.preventDefault();
-    console.log(e.target);
-    setTodos((prevTodos) => [...prevTodos, todoItem]);
 
-    setTimeout(() => {
-      textInput.value = "";
-    }, 2500);
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      { id: prevTodos.length + 1, ...todoItem },
+    ]);
   };
 
   // todo handle Clear completed todos

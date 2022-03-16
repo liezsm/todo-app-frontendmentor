@@ -45,16 +45,24 @@
     .todo-card {
       background-color: g.$veryLightGray;
       color: g.$veryDarkGrayishBlue;
+      box-shadow: -2px 10px 5px g.$darkGrayishBlue1;
     }
     .filter-card {
       background-color: g.$veryLightGray;
+    }
+  }
+
+  .fiter-desktop-only button,
+  .filter-card button {
+    &:hover {
+      color: g.$veryDarkGrayishBlue1;
     }
   }
 }
 
 // -for dark theme
 @mixin dark-theme($theme: true) {
-  background-color: black;
+  // background-color: black;
 
   header {
     background: url("../images/bg-mobile-dark.jpg") center/cover no-repeat;
@@ -83,6 +91,14 @@
     .filter-card {
       background-color: g.$veryDarkBlue;
       color: g.$veryDarkGrayishBlue;
+    }
+  }
+
+  .fiter-desktop-only button,
+  .filter-card button,
+  .task-counter button {
+    &:hover {
+      color: g.$lightGrayishBlueHover;
     }
   }
 }
