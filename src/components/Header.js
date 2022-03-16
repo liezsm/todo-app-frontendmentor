@@ -1,7 +1,25 @@
 import lightThemeLogo from "../dist/images/icon-moon.svg";
 import darkThemeLogo from "../dist/images/icon-sun.svg";
 
-const Header = ({ onTheme, isDark }) => {
+import { useState } from "react";
+
+const Header = ({ onTheme, isDark, handleInput, todos }) => {
+  const [addTodo, setAddTodo] = useState({
+    id: todos.length + 1,
+    text: "",
+    isCompleted: false,
+  });
+
+  const handleChange = (e) => {
+    const { type, name, value } = e.target;
+    const val = type == "checkbox" ? e.target.checked : value;
+    setAddTodo({
+      ...addTodo,
+      [name]: val,
+    });
+  };
+
+  const textInput = document.querySelector(".todo-input");
   return (
     <header>
       <div className='wrapper'>
@@ -14,15 +32,26 @@ const Header = ({ onTheme, isDark }) => {
             />
           </button>
         </div>
-
-        <div className='addTodo-form'>
-          <input type='checkbox' className='checkbox' />
-          <input
-            type='text'
-            className='todo-input'
-            placeholder='Create a new todo....'
-          />
-        </div>
+        <form onSubmit={(e) => handleInput(e, addTodo, textInput)}>
+          <div className='addTodo-form'>
+            <input
+              type='checkbox'
+              className='checkbox'
+              name='isCompleted'
+              checked={addTodo.isCompleted}
+              onChange={(e) => handleChange(e)}
+            />
+            <input
+              type='text'
+              className='todo-input'
+              placeholder='Create a new todo....'
+              name='text'
+              value={addTodo.text}
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <input type='submit' style={{ display: "none" }} />
+        </form>
       </div>
     </header>
   );

@@ -2,13 +2,59 @@ import FilterTodos from "./FilterTodos";
 import Task from "./Task";
 import TaskCounter from "./TaskCounter";
 
-const Main = () => {
+const Main = ({
+  todos,
+  onToggle,
+  handleCompleted,
+  handleFilter,
+  buttonColor,
+  isAll,
+  isActive,
+  isCompleteTask,
+  delBtn,
+}) => {
   return (
     <main>
       <div className='todo-card'>
-        <Task />
+        {isAll &&
+          todos.map((todo) => (
+            <Task
+              todo={todo}
+              key={todo.id}
+              onToggle={onToggle}
+              delBtn={delBtn}
+            />
+          ))}
+        {isActive &&
+          todos
+            .filter((todo) => !todo.isCompleted)
+            .map((todo) => (
+              <Task
+                todo={todo}
+                key={todo.id}
+                onToggle={onToggle}
+                delBtn={delBtn}
+              />
+            ))}
 
-        <TaskCounter />
+        {isCompleteTask &&
+          todos
+            .filter((todo) => todo.isCompleted)
+            .map((todo) => (
+              <Task
+                todo={todo}
+                key={todo.id}
+                onToggle={onToggle}
+                delBtn={delBtn}
+              />
+            ))}
+
+        <TaskCounter
+          todos={todos}
+          handleCompleted={handleCompleted}
+          handleFilter={handleFilter}
+          buttonColor={buttonColor}
+        />
       </div>
 
       <FilterTodos />

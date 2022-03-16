@@ -1,9 +1,9 @@
 const FilterTodos = () => {
   return (
     <div className='filter-card'>
-      <p>All</p>
-      <p>Active</p>
-      <p>Completed</p>
+      <button>All</button>
+      <button>Active</button>
+      <button>Completed</button>
     </div>
   );
 };

@@ -25,6 +25,14 @@
 
   header {
     background: url("../images/bg-mobile-light.jpg") center/cover no-repeat;
+    .addTodo-form {
+      background-color: g.$veryLightGray;
+
+      .todo-input {
+        color: g.$veryDarkGrayishBlue;
+      }
+    }
+
     @include desktop() {
       background: url("../images/bg-desktop-light.jpg") center/cover no-repeat;
     }
@@ -50,6 +58,14 @@
 
   header {
     background: url("../images/bg-mobile-dark.jpg") center/cover no-repeat;
+
+    .addTodo-form {
+      background-color: g.$veryDarkBlue;
+
+      .todo-input {
+        color: g.$lightGrayishBlue;
+      }
+    }
     @include desktop() {
       background: url("../images/bg-desktop-dark.jpg") center/cover no-repeat;
     }

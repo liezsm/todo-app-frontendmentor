@@ -52,7 +52,7 @@ header {
 
   .addTodo-form {
     margin: auto;
-    background: #fff;
+
     width: 100%;
     height: 50px;
     padding: 1rem;
@@ -64,6 +64,7 @@ header {
       padding: 0.5rem;
       border: none;
       outline: none;
+      background-color: transparent;
     }
   }
 }
@@ -136,9 +137,9 @@ main {
   border-bottom: 1px solid g.$darkGrayishBlue2;
 
   h3 {
-    margin-left: -6rem;
     @include m.desktop() {
       margin-left: -12rem;
+      cursor: pointer;
     }
   }
   .delete-btn {
@@ -166,6 +167,20 @@ main {
         @include m.add-padding(x, 1rem);
       }
     }
+  }
+}
+
+.fiter-desktop-only {
+  > * {
+    @include m.add-padding(x, 1rem);
+
+    &:hover {
+      color: g.$brightBlue;
+    }
+  }
+
+  .blue-color {
+    color: g.$brightBlue;
   }
 }
 footer {
