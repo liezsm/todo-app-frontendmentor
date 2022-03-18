@@ -5,7 +5,11 @@ import { useState } from "react";
 import Main from "./components/Main";
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
+  //todo user's device default color preference
+  const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  // console.log(darkModeMediaQuery);
+  const [isDark, setIsDark] = useState(darkModeMediaQuery);
+  const [preferDark, setPreferDark] = useState(false);
   const [todos, setTodos] = useState([
     { id: 1, text: "Complete Javascript course", isCompleted: true },
     { id: 2, text: "Jog around the park 3x", isCompleted: false },
@@ -14,16 +18,21 @@ function App() {
     { id: 5, text: "Pick up groceries", isCompleted: false },
     { id: 6, text: "Complete Todo App on Frontend Mentor", isCompleted: true },
   ]);
+
   const handleTheme = () => {
     setIsDark(!isDark);
   };
 
-  // todo to add the class for theme preference
+  // todo to add the class for theme preference using toggle and prefers-color-scheme
   let themeSwitch = isDark ? "App dark-theme" : "App light-theme";
   isDark
     ? (document.body.className = "dark-theme")
     : (document.body.className = "light-theme");
 
+  // if (lightModeMediaQuery.matches) {
+  //   document.body.className = "light-theme";
+  //   themeSwitch = "App light-theme";
+  // }
   // todo toggle todo check/uncheck
   const handleChange = (id) => {
     // console.log(id);
@@ -125,6 +134,7 @@ function App() {
     updateTodo(items);
     setTodos(items);
   };
+
   return (
     <div className={themeSwitch}>
       <Header

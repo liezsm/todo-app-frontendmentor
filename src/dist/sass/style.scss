@@ -8,13 +8,17 @@ body {
   height: 100vh;
 }
 
-body.dark-theme {
-  background-color: black;
-}
+// @media (prefers-color-scheme: dark) {
+//   body .dark-theme {
+//     background-color: black;
+//   }
+// }
 
-body.light-theme {
-  background-color: g.$veryLightGrayishBlue;
-}
+// @media (prefers-color-scheme: light) {
+//   body {
+//     background-color: g.$veryLightGrayishBlue;
+//   }
+// }
 
 .App {
   width: 100%;
