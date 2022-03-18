@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/todo-app-frontendmentor/static/css/main.0f2cc996.css",
+    "main.js": "/todo-app-frontendmentor/static/js/main.89bf8e4f.js",
+    "static/js/787.2843ca88.chunk.js": "/todo-app-frontendmentor/static/js/787.2843ca88.chunk.js",
+    "static/media/bg-desktop-light.jpg": "/todo-app-frontendmentor/static/media/bg-desktop-light.3508d620efd5a52bb4ce.jpg",
+    "static/media/bg-desktop-dark.jpg": "/todo-app-frontendmentor/static/media/bg-desktop-dark.73e47dbb723ebc772ef0.jpg",
+    "index.html": "/todo-app-frontendmentor/index.html",
+    "static/media/icon-sun.svg": "/todo-app-frontendmentor/static/media/icon-sun.910b1f9a23741afc341e95653a51f14f.svg",
+    "static/media/icon-moon.svg": "/todo-app-frontendmentor/static/media/icon-moon.6c03114b495d05f4380b3c544d9afe2a.svg",
+    "static/media/icon-cross.svg": "/todo-app-frontendmentor/static/media/icon-cross.6ee81d30b75cab19d6f7314624fcc4d6.svg",
+    "static/media/icon-check.svg": "/todo-app-frontendmentor/static/media/icon-check.a8fb15d0278c8e312df5.svg",
+    "main.0f2cc996.css.map": "/todo-app-frontendmentor/static/css/main.0f2cc996.css.map",
+    "main.89bf8e4f.js.map": "/todo-app-frontendmentor/static/js/main.89bf8e4f.js.map",
+    "787.2843ca88.chunk.js.map": "/todo-app-frontendmentor/static/js/787.2843ca88.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0f2cc996.css",
+    "static/js/main.89bf8e4f.js"
+  ]
+}
