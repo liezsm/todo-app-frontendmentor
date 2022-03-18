@@ -26,7 +26,7 @@ function App() {
 
   // todo toggle todo check/uncheck
   const handleChange = (id) => {
-    console.log(id);
+    // console.log(id);
     setTodos((prevTodos) => {
       return prevTodos.map((todo) => {
         if (todo.id === id) {
@@ -108,6 +108,23 @@ function App() {
   const delBtn = (id) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
+  // todo for drag and drop functon
+
+  // - https://www.youtube.com/watch?v=aYZRRyukuIw
+  // exp this tutorial has helped me with the implementation of drag and drop feature
+  const [todo, updateTodo] = useState(todos);
+
+  const handleDragEnd = (result) => {
+    if (!result.destination) return;
+    // console.log(result);
+    const items = Array.from(todos);
+    // console.log("before", items);
+    const [reoderredItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reoderredItem);
+    // console.log("after", items);
+    updateTodo(items);
+    setTodos(items);
+  };
   return (
     <div className={themeSwitch}>
       <Header
@@ -127,7 +144,9 @@ function App() {
           isActive={isActive}
           isCompleteTask={isCompleteTask}
           delBtn={delBtn}
+          handleDragEnd={handleDragEnd}
         />
+
         <Footer />
       </div>
     </div>

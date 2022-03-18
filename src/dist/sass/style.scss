@@ -182,7 +182,10 @@ main {
   @include m.d-flex;
 
   @include m.add-padding(all, 1rem);
-  border-bottom: 1px solid g.$darkGrayishBlue2;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid g.$darkGrayishBlue2;
+  }
 
   p {
     cursor: pointer;
