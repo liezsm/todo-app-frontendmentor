@@ -29,10 +29,6 @@ function App() {
     ? (document.body.className = "dark-theme")
     : (document.body.className = "light-theme");
 
-  // if (lightModeMediaQuery.matches) {
-  //   document.body.className = "light-theme";
-  //   themeSwitch = "App light-theme";
-  // }
   // todo toggle todo check/uncheck
   const handleChange = (id) => {
     // console.log(id);

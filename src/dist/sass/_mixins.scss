@@ -1,4 +1,6 @@
 @use "./globals" as g;
+@use "sass:math";
+
 // -for desktop sizes
 @mixin desktop() {
   @media (min-width: 768px) {
@@ -17,6 +19,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+// todo for converting px to rems
+
+@function pxToRem($pxValue) {
+  @return math.div($pxValue, 16px) * 1rem;
 }
 
 // - for light theme

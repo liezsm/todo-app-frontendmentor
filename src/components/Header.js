@@ -9,8 +9,6 @@ const Header = ({ onTheme, isDark, handleInput, todos }) => {
     isCompleted: false,
   });
 
-  const [isSubmit, setIsSubmit] = useState(false);
-
   const handleChange = (e) => {
     const { type, name, value } = e.target;
     const val = type == "checkbox" ? e.target.checked : value;
@@ -20,7 +18,6 @@ const Header = ({ onTheme, isDark, handleInput, todos }) => {
     });
   };
 
-  const textInput = document.querySelector(".todo-input");
   return (
     <header>
       <div className='wrapper'>
@@ -36,7 +33,7 @@ const Header = ({ onTheme, isDark, handleInput, todos }) => {
         <form
           onSubmit={(e) => {
             handleInput(e, addTodo);
-            setIsSubmit(true);
+
             setTimeout(() => {
               setAddTodo({
                 text: "",
@@ -56,6 +53,7 @@ const Header = ({ onTheme, isDark, handleInput, todos }) => {
             <input
               type='text'
               className='todo-input'
+              required
               placeholder='Create a new todo....'
               name='text'
               value={addTodo.text}

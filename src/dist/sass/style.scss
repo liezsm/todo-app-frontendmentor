@@ -26,7 +26,7 @@ body.light-theme {
   width: 90vw;
   margin: auto;
   @include m.desktop() {
-    width: 535px;
+    width: m.pxToRem(535px);
   }
 }
 
@@ -39,13 +39,13 @@ body.light-theme {
 }
 header {
   width: 100%;
-  height: 210px;
+  height: m.pxToRem(210px);
   color: g.$veryLightGray;
   font-weight: bold;
-  @include m.add-padding(top, 40px);
+  @include m.add-padding(top, m.pxToRem(40px));
   @include m.desktop() {
-    font-size: 30px;
-    height: 310px;
+    font-size: m.pxToRem(30px);
+    height: m.pxToRem(310px);
   }
 
   .title {
@@ -73,10 +73,10 @@ header {
   }
 
   form {
-    font-size: 14px;
+    font-size: m.pxToRem(14px);
 
     @include m.desktop() {
-      font-size: 20px;
+      font-size: m.pxToRem(20px);
     }
   }
 
@@ -84,17 +84,17 @@ header {
     margin: auto;
 
     width: 100%;
-    height: 50px;
+    height: m.pxToRem(50px);
     padding: 1rem;
     border-radius: 0.7rem;
     @include m.d-flex-row;
 
     @include m.desktop() {
-      height: 62px;
+      height: m.pxToRem(62px);
       align-items: center;
     }
     .todo-input {
-      font-size: 18px;
+      font-size: m.pxToRem(18px);
       width: 90%;
       padding: 0.5rem;
       border: none;
@@ -107,15 +107,15 @@ header {
 .checkbox {
   -webkit-appearance: none;
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: m.pxToRem(20px);
+  height: m.pxToRem(20px);
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
 
   @include m.desktop() {
-    width: 30px;
-    height: 30px;
+    width: m.pxToRem(30px);
+    height: m.pxToRem(30px);
   }
 
   &:checked {
@@ -149,19 +149,19 @@ main {
     width: 100%;
     border-radius: 0.7rem;
     height: auto;
-    font-size: 14px;
+    font-size: m.pxToRem(14px);
 
     @include m.desktop() {
       width: 100%;
       margin-top: -4rem;
-      font-size: 18px;
+      font-size: m.pxToRem(18px);
       box-shadow: -10px 20px 50px black, 10px 20px 50px black;
     }
   }
 
   .filter-card {
     @include m.d-flex;
-    padding: 11px 65px;
+    padding: m.pxToRem(11px) m.pxToRem(65px);
     justify-content: space-around;
     width: 100%;
     margin: auto;
@@ -172,7 +172,7 @@ main {
       display: none;
     }
     button {
-      font-size: 14px;
+      font-size: m.pxToRem(14px);
       font-weight: bold;
       padding: 1rem;
     }
@@ -181,13 +181,10 @@ main {
 
 .task-item {
   @include m.d-flex;
-
+  justify-content: start;
+  gap: 1rem;
+  border-bottom: 1px solid g.$darkGrayishBlue2;
   @include m.add-padding(all, 1rem);
-
-  &:not(:last-child) {
-    border-bottom: 1px solid g.$darkGrayishBlue2;
-  }
-
   p {
     cursor: pointer;
   }
@@ -196,6 +193,7 @@ main {
     background-color: transparent;
     border: none;
     transition: opacity 300ms ease-in;
+    margin-left: auto;
 
     @include m.desktop() {
       opacity: 0;
@@ -244,10 +242,10 @@ main {
 footer {
   color: g.$darkGrayishBlue2;
   text-align: center;
-  margin-top: 42px;
+  margin-top: m.pxToRem(42px);
   font-size: 15px;
 
   @include m.desktop() {
-    margin-top: 47px;
+    margin-top: m.pxToRem(47px);
   }
 }
